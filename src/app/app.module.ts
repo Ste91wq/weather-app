@@ -5,11 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { CurrentWeatherComponent } from './core/modules/components/current-weather/current-weather.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatInputModule } from '@angular/material/input';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import localeIt from '@angular/common/locales/it';
 import { registerLocaleData } from '@angular/common';
 
@@ -23,12 +20,9 @@ registerLocaleData(localeIt);
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FlexLayoutModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatCardModule,
-    MatInputModule,
-    MatButtonModule
+    NgbModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'it-IT' }],
   bootstrap: [AppComponent]
