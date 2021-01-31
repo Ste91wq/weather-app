@@ -13,14 +13,13 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class WeatherService {
-  weather: IWeather;
 
   constructor(
     private http: HttpClient,
     private geolocationService: GeolocationService
   ) { }
 
-  getWeatherWeek(city: string): Observable<IWeather> {
+  getWeatherWeek(city: string): Observable<IWeather[]> {
     return this.geolocationService.getCordsCity(city).pipe(
       mergeMap(({ lat, lon }) => {
         const params = new HttpParams()
