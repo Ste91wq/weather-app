@@ -1,0 +1,17 @@
+ <div fxlayout='row' fxLayoutGap='5px'>
+   <mat-label>Enter a city: </mat-label>
+   <input matInput type="text" #city>
+   <button mat-raised-button (click)="getWeatherWeek(city.value)" color='primary'>Search</button>
+ </div>
+
+ <div fxlayout='column' fxLayoutAlign='center'>
+
+   <div *ngIf="weatherWeek">
+     <mat-card *ngFor='let data of weatherWeek'>
+       <h3>{{data?.city | titlecase}}, {{data?.date | date : 'dd MMMM yyyy' | titlecase}}</h3>
+       <img mat-card-avatar src={{data?.icon}} />
+       <h4>{{data?.degress}}°<sup>c</sup> {{data?.description |titlecase}}</h4>
+     </mat-card>
+   </div>
+
+ </div>

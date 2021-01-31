@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  weatherUrl: 'http://api.openweathermap.org/data/2.5/weather',
+  weatherWeekUrl: 'http://api.openweathermap.org/data/2.5/onecall',
+  apiKey: 'd0ee87dd6849e9c48c18a36d3b085c01',
+  geolocationUrl: 'https://nominatim.openstreetmap.org/search.php'
 };
 
 /*
