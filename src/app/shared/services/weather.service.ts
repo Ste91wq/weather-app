@@ -35,7 +35,7 @@ export class WeatherService {
             (data: any) =>
               data.daily.map((daily) => {
                 return {
-                  city: city,
+                  city,
                   date: daily?.dt * 1000,
                   degress: _.round(daily.temp.day),
                   description: daily?.weather[0]?.description,
