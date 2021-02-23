@@ -15,15 +15,15 @@ export class GeolocationService {
   getCordsCity(city: string): Observable<{ lat: string, lon: string }> {
     const params = new HttpParams()
       .set('city', city)
-      .set('format', 'json')
+      .set('format', 'json');
 
     return this.http.get(environment.geolocationUrl, { params }).pipe(
       map((result: unknown) => {
         return {
           lat: result[0].lat,
           lon: result[0].lon,
-        }
+        };
       })
-    )
+    );
   }
 }

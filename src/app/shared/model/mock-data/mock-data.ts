@@ -8,4 +8,4 @@ export const WEATHER_MOCK_DATA: IWeather = {
   date: new Date(),
   description: '',
   icon: ''
-}
+};
