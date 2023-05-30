@@ -1,0 +1,28 @@
+<div id="container">
+  <div class="d-flex justify-content-center">
+    <div class="form-horizontal">
+      <label class="control-label me-2">Enter a city:</label>
+      <input type="text" class="control-form" #city />
+      <button
+        type="submit"
+        class="btn btn-primary ms-2"
+        (click)="getWeatherWeek(city.value)"
+      >
+        Search
+      </button>
+    </div>
+  </div>
+
+  <div class="card d-inline-flex m-2" *ngFor="let data of weatherWeek">
+    <div class="card-body">
+      <h3 class="card-title text-center p-1">{{ data?.city | titlecase }}</h3>
+      <h4 class="text-center">
+        {{ data?.date | date : "dd MMMM yyyy" | titlecase }}
+      </h4>
+      <img class="img-fluid d-block mx-auto mb-2" src="{{ data?.icon }}" />
+      <h5 class="text-center pt-2">
+        {{ data?.degress }}°<sup>c</sup> {{ data?.description | titlecase }}
+      </h5>
+    </div>
+  </div>
+</div>
